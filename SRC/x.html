@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Section</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      background-color: #333;
+      color: #fff;
+    }
+    .container {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+    }
+    .menu {
+      width: 25%;
+      padding: 20px;
+      background-color: #444;
+    }
+    .menu-item {
+      padding: 15px;
+      cursor: pointer;
+      border-bottom: 1px solid #555;
+    }
+    .menu-item:hover, .menu-item.active {
+      background-color: #555;
+    }
+    .content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .content img {
+      max-width: 100%;
+      height: auto;
+      display: none;
+    }
+    .content img.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="menu">
+      <div class="menu-item" data-target="blockchain">WEB3 & Blockchain</div>
+      <div class="menu-item" data-target="emerging-tech">Disruptive & Emerging Tech</div>
+      <div class="menu-item" data-target="government">Government</div>
+      <div class="menu-item" data-target="gaming">Gaming</div>
+      <div class="menu-item" data-target="other">Other</div>
+    </div>
+    <div class="content">
+      <img src="image1.png" id="blockchain" class="active">
+      <img src="image2.png" id="emerging-tech">
+      <img src="image3.png" id="government">
+      <img src="image4.png" id="gaming">
+      <img src="image5.png" id="other">
+    </div>
+  </div>
+
+  <script>
+    const menuItems = document.querySelectorAll('.menu-item');
+    const contentImages = document.querySelectorAll('.content img');
+
+    menuItems.forEach(item => {
+      item.addEventListener('click', () => {
+        // Remove active class from all menu items
+        menuItems.forEach(menu => menu.classList.remove('active'));
+        item.classList.add('active');
+
+        // Hide all images
+        contentImages.forEach(img => img.classList.remove('active'));
+
+        // Show target image
+        const targetId = item.getAttribute('data-target');
+        document.getElementById(targetId).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

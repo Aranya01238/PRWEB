@@ -1,0 +1,71 @@
+/* styles.css */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .carousel-section {
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; 
+  }
+  
+  .carousel-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  .carousel-wrapper {
+    position: relative;
+    width: 500px;
+    height: 200px;
+    perspective: 1000px;
+    margin-top: 200px;
+  }
+  
+  .carousel {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1.5s ease-in-out;
+  }
+  
+  .carousel-item {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.7));
+    border-radius: 50%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .carousel-item:nth-child(1) { transform: rotateY(0deg) translateZ(300px); }
+  .carousel-item:nth-child(2) { transform: rotateY(60deg) translateZ(300px); }
+  .carousel-item:nth-child(3) { transform: rotateY(120deg) translateZ(300px); }
+  .carousel-item:nth-child(4) { transform: rotateY(180deg) translateZ(300px); }
+  .carousel-item:nth-child(5) { transform: rotateY(240deg) translateZ(300px); }
+  .carousel-item:nth-child(6) { transform: rotateY(300deg) translateZ(300px); }
+  
+    
